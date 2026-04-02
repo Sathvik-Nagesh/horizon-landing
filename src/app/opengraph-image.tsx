@@ -46,7 +46,7 @@ export default function Image() {
 
         {/* Central Logo and Text */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '30px' }}>
-          <span style={{ fontSize: '60px', color: '#667eea', background: 'linear-gradient(135deg, #667eea, #f093fb)', backgroundClip: 'text', color: 'transparent' }}>◈</span>
+          <span style={{ fontSize: '60px', background: 'linear-gradient(135deg, #667eea, #f093fb)', backgroundClip: 'text', color: 'transparent' }}>◈</span>
           <span style={{ fontSize: '80px', fontWeight: 800, color: '#fff', letterSpacing: '0.2em' }}>HORIZON</span>
         </div>
 

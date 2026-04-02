@@ -4,6 +4,8 @@ import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { gsap } from "gsap";
 
+import { TextScramble } from "./text-scramble";
+
 export const NetworkGlobe = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -183,9 +185,11 @@ export const NetworkGlobe = () => {
         
         <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
             <div className="text-left" data-cursor="text">
-                <p className="features__label mb-4 text-left">GLOBAL ARCHITECTURE</p>
+                <p className="features__label mb-4 text-left">
+                  <TextScramble text="GLOBAL ARCHITECTURE" />
+                </p>
                 <h2 className="text-4xl md:text-5xl font-syne font-bold text-white mb-6">
-                    Spatial networks built for <span className="text-gradient">infinite scale.</span>
+                    Spatial networks built for <span className="text-gradient"><TextScramble text="infinite scale." /></span>
                 </h2>
                 <p className="text-white/50 font-inter text-lg leading-relaxed mb-8">
                     Our decentralized nodes route volumetric data faster than ever before. Capable of handling millions of concurrent XR realities globally with zero-latency edge delivery.

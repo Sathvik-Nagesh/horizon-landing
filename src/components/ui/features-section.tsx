@@ -65,6 +65,8 @@ const features = [
   },
 ];
 
+import { TextScramble } from "./text-scramble";
+
 export const FeaturesSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -134,9 +136,11 @@ export const FeaturesSection = () => {
   return (
     <section id="features" ref={sectionRef} className="features">
       <div className="features__container">
-        <p className="features__label">CAPABILITIES</p>
+        <p className="features__label">
+          <TextScramble text="CAPABILITIES" />
+        </p>
         <h2 className="features__heading">
-          Built for the <span className="text-gradient">next frontier</span>
+          Built for the <span className="text-gradient"><TextScramble text="next frontier" /></span>
         </h2>
         <p className="features__subheading">
           Every tool you need to design, launch, and scale — unified in one

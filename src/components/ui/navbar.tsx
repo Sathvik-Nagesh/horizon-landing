@@ -4,10 +4,10 @@ import React, { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 
 const navLinks = [
-  { label: "Home", href: "#hero" },
-  { label: "Features", href: "#features" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Features", href: "/#features" },
+  { label: "About", href: "/#about" },
+  { label: "Roadmap", href: "/#roadmap" },
 ];
 
 const MagneticElement = ({ children }: { children: React.ReactNode }) => {
@@ -65,8 +65,8 @@ export const Navbar = () => {
     <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
       <div className="navbar__inner">
         <MagneticElement>
-          <a href="#hero" className="navbar__logo">
-            <span className="navbar__logo-icon">◈</span>
+          <a href="/" className="navbar__logo">
+            <span className="navbar__logo-icon">◈</span>{" "}
             <span className="navbar__logo-text">HORIZON</span>
           </a>
         </MagneticElement>
@@ -84,7 +84,7 @@ export const Navbar = () => {
         </ul>
 
         <MagneticElement>
-          <a href="#contact" className="navbar__cta">
+          <a href="/get-started" className="navbar__cta">
             Get Started
           </a>
         </MagneticElement>
@@ -114,7 +114,7 @@ export const Navbar = () => {
           </a>
         ))}
         <a
-          href="#contact"
+          href="/get-started"
           className="navbar__cta navbar__cta--mobile"
           onClick={() => setMobileOpen(false)}
         >
