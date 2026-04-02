@@ -83,7 +83,7 @@ export const RoadmapSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="roadmap" id="roadmap">
+    <section ref={sectionRef} className="roadmap bg-black relative z-20" id="roadmap">
       <div className="roadmap__container pt-32 pb-40 px-6 max-w-[1000px] mx-auto relative z-10">
         <div className="text-center mb-24">
           <p className="features__label">ROADMAP</p>
