@@ -120,11 +120,13 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    box-sizing: border-box;
   }
   body {
-    @apply bg-background text-foreground;
+    background: #000;
+    color: #fff;
   }
   html {
-    @apply font-sans;
+    scroll-behavior: auto;
   }
 }
