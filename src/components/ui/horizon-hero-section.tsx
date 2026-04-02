@@ -573,7 +573,7 @@ export const Component = () => {
   };
 
   return (
-    <div ref={containerRef} className="hero-container cosmos-style">
+    <div ref={containerRef} className="hero-container cosmos-style" data-cursor="drag">
       <canvas ref={canvasRef} className="hero-canvas" />
       
 

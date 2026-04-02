@@ -2,6 +2,7 @@ import { Component } from "@/components/ui/horizon-hero-section";
 import { Navbar } from "@/components/ui/navbar";
 import { MarqueeStrip } from "@/components/ui/marquee-strip";
 import { FeaturesSection } from "@/components/ui/features-section";
+import { NetworkGlobe } from "@/components/ui/network-globe";
 import { AboutSection } from "@/components/ui/about-section";
 import { RoadmapSection } from "@/components/ui/roadmap-section";
 import { TestimonialsSection } from "@/components/ui/testimonials-section";
@@ -20,6 +21,7 @@ export default function Home() {
       <div className="relative z-[20]">
         <DriftingCosmicDust />
         <FeaturesSection />
+        <NetworkGlobe />
         <AboutSection />
         <RoadmapSection />
         <TestimonialsSection />

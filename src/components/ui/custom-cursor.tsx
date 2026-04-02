@@ -5,10 +5,10 @@ import { gsap } from "gsap";
 
 export const CustomCursor = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
   const dotRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Hide default cursor globally on non-touch devices
     const isTouchDevice =
       "ontouchstart" in window || navigator.maxTouchPoints > 0;
     if (isTouchDevice) return;
@@ -16,7 +16,6 @@ export const CustomCursor = () => {
     document.body.style.cursor = "none";
 
     const moveCursor = (e: MouseEvent) => {
-      // Small dot follows instantly
       if (dotRef.current) {
         gsap.to(dotRef.current, {
           x: e.clientX,
@@ -25,7 +24,6 @@ export const CustomCursor = () => {
         });
       }
       
-      // Large glow follows with a slight delayed spring effect
       if (cursorRef.current) {
         gsap.to(cursorRef.current, {
           x: e.clientX,
@@ -38,34 +36,73 @@ export const CustomCursor = () => {
 
     const handleHover = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      // If hovering over a link or button, expand the cursor
-      if (
-        target.closest("a") ||
-        target.closest("button") ||
-        target.closest(".feature-card") ||
-        target.closest(".menu-icon")
-      ) {
+      
+      const isText = target.closest("h1, h2, h3, p, span.text-gradient");
+      const isLink = target.closest("a, button, .feature-card");
+      const cursorData = target.closest("[data-cursor]")?.getAttribute("data-cursor");
+
+      if (cursorData === "drag") {
+        gsap.to(cursorRef.current, {
+          scale: 2,
+          opacity: 1,
+          duration: 0.3,
+          background: "rgba(255, 255, 255, 0.1)",
+          backdropFilter: "blur(4px)",
+          border: "1px solid rgba(255, 255, 255, 0.5)",
+          filter: "none",
+          mixBlendMode: "normal",
+        });
+        if (textRef.current) textRef.current.innerText = "DRAG";
+        gsap.to(textRef.current, { opacity: 1, scale: 0.5, duration: 0.3 });
+        gsap.to(dotRef.current, { scale: 0, duration: 0.2 });
+      } 
+      else if (isLink) {
         gsap.to(cursorRef.current, {
           scale: 2.5,
           opacity: 0.15,
           duration: 0.3,
           background: "linear-gradient(135deg, #a78bfa, #f093fb)",
+          border: "none",
+          filter: "blur(4px)",
+          mixBlendMode: "screen",
         });
-        gsap.to(dotRef.current, {
-          scale: 0,
-          duration: 0.2,
+        if (textRef.current) {
+          textRef.current.innerText = "";
+          gsap.to(textRef.current, { opacity: 0, duration: 0.2 });
+        }
+        gsap.to(dotRef.current, { scale: 0, duration: 0.2 });
+      } 
+      else if (isText) {
+        gsap.to(cursorRef.current, {
+          scale: 3,
+          opacity: 1,
+          duration: 0.3,
+          background: "#fff",
+          border: "none",
+          filter: "none",
+          mixBlendMode: "difference",
         });
-      } else {
+        if (textRef.current) {
+          textRef.current.innerText = "";
+          gsap.to(textRef.current, { opacity: 0, duration: 0.2 });
+        }
+        gsap.to(dotRef.current, { scale: 0, duration: 0.2 });
+      } 
+      else {
         gsap.to(cursorRef.current, {
           scale: 1,
           opacity: 0.4,
           duration: 0.3,
           background: "linear-gradient(135deg, #667eea, #764ba2)",
+          border: "none",
+          filter: "blur(4px)",
+          mixBlendMode: "screen",
         });
-        gsap.to(dotRef.current, {
-          scale: 1,
-          duration: 0.2,
-        });
+        if (textRef.current) {
+          textRef.current.innerText = "";
+          gsap.to(textRef.current, { opacity: 0, duration: 0.2 });
+        }
+        gsap.to(dotRef.current, { scale: 1, duration: 0.2 });
       }
     };
 
@@ -83,7 +120,7 @@ export const CustomCursor = () => {
     <>
       <div
         ref={cursorRef}
-        className="custom-cursor-glow"
+        className="custom-cursor-glow flex items-center justify-center font-syne font-bold tracking-widest text-white"
         style={{
           position: "fixed",
           top: 0,
@@ -98,8 +135,11 @@ export const CustomCursor = () => {
           opacity: 0.4,
           filter: "blur(4px)",
           mixBlendMode: "screen",
+          transition: "border 0.3s ease",
         }}
-      />
+      >
+        <span ref={textRef} style={{ opacity: 0 }} />
+      </div>
       <div
         ref={dotRef}
         className="custom-cursor-dot"
