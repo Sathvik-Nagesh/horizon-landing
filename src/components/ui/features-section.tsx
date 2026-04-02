@@ -186,6 +186,10 @@ export const FeaturesSection = () => {
               </div>
               <h3 className="feature-card__title">{f.title}</h3>
               <p className="feature-card__desc">{f.description}</p>
+              
+              {/* Rotating beam border mask */}
+              <div className="feature-card__border" />
+
               <div
                 className="feature-card__glow"
                 style={{ background: f.glow }}
