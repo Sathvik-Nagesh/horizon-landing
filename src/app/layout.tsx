@@ -20,16 +20,24 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: "HORIZON — Where Vision Meets Reality",
+  title: "HORIZON | Spatial Computing Infrastructure",
   description:
-    "An immersive space-themed digital experience. Where vision meets reality, we shape the future of tomorrow.",
-  keywords: ["horizon", "space", "cosmos", "immersive", "design", "3d"],
+    "Architecting the foundational layer for spatial computing and immersive AI. Build high-fidelity digital dimensions with our quantum rendering engine.",
+  keywords: ["spatial computing", "AI", "webgl", "threejs", "horizon", "virtual reality"],
   authors: [{ name: "Sathvik Nagesh" }],
   openGraph: {
-    title: "HORIZON — Where Vision Meets Reality",
+    title: "HORIZON | Spatial Computing & Immersive AI",
     description:
-      "An immersive space-themed landing page experience with stunning 3D visuals.",
+      "Architecting the foundational layer for spatial computing and immersive AI.",
+    url: "https://horizon.sathvik.dev",
+    siteName: "Horizon",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "HORIZON | Spatial Computing Infrastructure",
+    description: "Architecting the foundational layer for spatial computing and immersive AI.",
+    creator: "@sathvik_nagesh",
   },
 };
 
