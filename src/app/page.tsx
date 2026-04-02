@@ -3,6 +3,7 @@ import { Navbar } from "@/components/ui/navbar";
 import { MarqueeStrip } from "@/components/ui/marquee-strip";
 import { FeaturesSection } from "@/components/ui/features-section";
 import { AboutSection } from "@/components/ui/about-section";
+import { RoadmapSection } from "@/components/ui/roadmap-section";
 import { TestimonialsSection } from "@/components/ui/testimonials-section";
 import { CtaSection } from "@/components/ui/cta-section";
 import { Footer } from "@/components/ui/footer";
@@ -20,6 +21,7 @@ export default function Home() {
         <DriftingCosmicDust />
         <FeaturesSection />
         <AboutSection />
+        <RoadmapSection />
         <TestimonialsSection />
         <CtaSection />
         <Footer />

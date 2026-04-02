@@ -586,10 +586,10 @@ export const Component = () => {
         
         <div ref={subtitleRef} className="hero-subtitle cosmos-subtitle">
           <p className="subtitle-line">
-            Where vision meets reality, 
+            Architecting the foundational layer for
           </p>
           <p className="subtitle-line">
-            we shape the future of tomorrow
+            spatial computing and immersive AI.
           </p>
         </div>
       </div>
@@ -619,16 +619,16 @@ export const Component = () => {
           
           const subtitles: Record<number, { line1: string; line2: string }> = {
             0: {
-              line1: 'Where vision meets reality,',
-              line2: 'we shape the future of tomorrow'
+              line1: 'Architecting the foundational layer for',
+              line2: 'spatial computing and immersive AI.'
             },
             1: {
-              line1: 'Beyond the boundaries of imagination,',
-              line2: 'lies the universe of possibilities'
+              line1: 'Building high-fidelity digital dimensions',
+              line2: 'that blur the line between virtual and reality.'
             },
             2: {
-              line1: 'In the space between thought and creation,',
-              line2: 'we find the essence of true innovation'
+              line1: 'Giving developers the rendering and neural tools',
+              line2: 'to build infinite interactive universes.'
             }
           };
           
